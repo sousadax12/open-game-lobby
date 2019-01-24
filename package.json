@@ -21,10 +21,13 @@
   },
   "dependencies": {
     "@nestjs/common": "^5.4.0",
-    "@nestjs/core": "^5.4.0", 
+    "@nestjs/core": "^5.4.0",
+    "@nestjs/websockets": "^5.6.2",
+    "@types/mongoose": "^5.3.9",
+    "mongoose": "^5.4.6",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.2.2",
+    "rxjs": "^6.0.0",
     "typescript": "^3.0.1"
   },
   "devDependencies": {
@@ -44,7 +47,11 @@
     "tslint": "5.11.0"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "json", "ts"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
     "rootDir": "src",
     "testRegex": ".spec.ts$",
     "transform": {
