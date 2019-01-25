@@ -46,8 +46,7 @@ let LobbyService = class LobbyService {
 LobbyService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(LobbySchema_1.LobbyToken)),
-    __metadata("design:paramtypes", [typeof (_a = typeof mongoose_1.Model !== "undefined" && mongoose_1.Model) === "function" && _a || Object])
+    __metadata("design:paramtypes", [mongoose_1.Model])
 ], LobbyService);
 exports.LobbyService = LobbyService;
-var _a;
 //# sourceMappingURL=lobby.service.js.map

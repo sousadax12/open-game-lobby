@@ -8,31 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const websockets_1 = require("@nestjs/websockets");
 let EventsGateway = class EventsGateway {
-    identity(client, data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return data;
+    onEvent(client, data) {
+        console.log(data);
+        return data;
+    }
+    handleConnection(socket) {
+        console.log('teste');
+        socket.on('message', (data) => {
+            console.log('my:event triggered by adding listener to socket');
         });
     }
 };
 __decorate([
-    websockets_1.SubscribeMessage('sendPath'),
+    websockets_1.WebSocketServer(),
+    __metadata("design:type", Object)
+], EventsGateway.prototype, "server", void 0);
+__decorate([
+    websockets_1.SubscribeMessage,
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Number]),
-    __metadata("design:returntype", Promise)
-], EventsGateway.prototype, "identity", null);
+    __metadata("design:paramtypes", [Object, String]),
+    __metadata("design:returntype", String)
+], EventsGateway.prototype, "onEvent", null);
 EventsGateway = __decorate([
-    websockets_1.WebSocketGateway()
+    websockets_1.WebSocketGateway(3002)
 ], EventsGateway);
 exports.EventsGateway = EventsGateway;
 //# sourceMappingURL=events.gateway.js.map

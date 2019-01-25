@@ -41,8 +41,7 @@ let AppClientService = class AppClientService {
 AppClientService = __decorate([
     common_1.Injectable(),
     __param(0, common_1.Inject(AppClientSchema_1.AppClientToken)),
-    __metadata("design:paramtypes", [typeof (_a = typeof mongoose_1.Model !== "undefined" && mongoose_1.Model) === "function" && _a || Object])
+    __metadata("design:paramtypes", [mongoose_1.Model])
 ], AppClientService);
 exports.AppClientService = AppClientService;
-var _a;
 //# sourceMappingURL=app-client.service.js.map
